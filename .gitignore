@@ -16,3 +16,6 @@
 /tmp
 .vagrant
 cookbooks/HashiCorpVagranthome/
+HashiCorpVagranthome/
+bfg-1.12.3.jar
+/HashiCorpVagranthome
