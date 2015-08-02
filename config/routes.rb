@@ -13,7 +13,7 @@ resources :orders, only: [:index, :show, :new, :create]
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'static_pages#landing_page'
+   root 'static_pages#contact_page'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
