@@ -13,12 +13,22 @@
   </thead>
 
   <tbody>
-    <% @products.each do |product| %>
-     <%= render product %>
-    <% end %>
+  <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td class="img_url"><%= product.image_url %></td>
+        <td><%= image_tag(product.image_url) %></td>
+        <td class="img-url"><%= product.image_url %></td>
+        <td class="product-image"><%= image_tag(product.image_url) %></td>
+        <td><%= product.color %></td>
+        <td>$<%= product.price %></td>
+      </tr> 
+      <% end %> 
+       
   </tbody>
 </table>
-
 <br>
+
+
 
 <%= link_to 'New Product', new_product_path %>
