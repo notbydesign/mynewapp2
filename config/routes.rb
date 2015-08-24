@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   devise_for :users , :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   resources :users
+=======
+  
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+ 
+>>>>>>> reviews
 
-  resources :products
+  resources :products do
+    resources :comments
+   end
+   resources :users 
 
 resources :orders, only: [:index, :show, :new, :create]  
 
