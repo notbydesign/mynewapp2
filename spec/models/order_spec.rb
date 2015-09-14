@@ -1,13 +1,45 @@
+
 require 'rails_helper'
 
-describe Order do
+ describe Order do
 
-	context "user_id present" do
 
-		before { @order = build(:order)}
+  # Tests for the attributes of orders:
+  context "full order functions" do
 
-			it "returns only user_id" do
-			expect(@order.user_id).to eq 1
-			end	
-	end
+    before { @order = Order.new(user_id: 1, product_id: 1)}
+
+    it "should return everything" do
+      expect(@order.user_id).to eq 1
+      expect(@order.product_id).to eq 1
+    end
+  end
+
+  context "order user_id functions" do
+
+    before { @order = Order.new(user_id: 1)}
+
+    it "should return user_id" do
+      expect(@order.user_id).to eq 1
+    end
+  end
+
+  context "order product_id functions" do
+
+    before { @order = Order.new(product_id: 1)}
+
+    it "should return product_id" do
+      expect(@order.product_id).to eq 1
+    end
+  end
+
+  context "full order fails" do
+
+    before { @order = Order.new()}
+
+    it "should return nothing" do
+      expect(@order.user_id).to eq nil
+      expect(@order.product_id).to eq nil
+    end
+  end
 end
