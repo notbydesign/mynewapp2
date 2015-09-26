@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
      @products = Product.limit(3)
     #render layout: "products"
     end
+        byebug
   end
 
   # GET /products/1
