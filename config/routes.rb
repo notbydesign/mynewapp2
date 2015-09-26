@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   end
   resources :users  
 
+
   devise_for :users , :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   
 
 resources :orders, only: [:index, :show, :new, :create]  
 
+ post 'payments/create'
+  
   get 'static_pages/about'
 
   get 'static_pages/contact'
