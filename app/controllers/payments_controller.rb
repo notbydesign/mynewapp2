@@ -1,4 +1,6 @@
 class PaymentsController < ApplicationController
+	skip_before_filter :verify_authenticity_token
+	
 	def create
 	token = params[:stripeToken]
 	product = Product.find(params[:product_id])
